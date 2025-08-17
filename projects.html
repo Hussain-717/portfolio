@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hussain Ammar Haider - Skills</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+    <style>
+        /* General body and font styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #0f1117;
+            color: #e0e0e0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Light mode styles */
+        body.light-mode {
+            background-color: #f0f2f5;
+            color: #333;
+        }
+
+        /* Original Navbar Styling */
+        .navbar {
+            display: flex;
+            justify-content: flex-start; /* Aligns children (logo & menu) to the left */
+            padding: 20px;
+            background-color: transparent;
+            top: 0;
+            left: 0;
+            width: 100%; /* Ensures full width */
+            z-index: 1000;
+        }
+
+        .nav-menu {
+            display: flex; /* Makes the list items (li) arrange horizontally */
+            list-style: none;
+            gap: 25px; /* Modern way to add space between flex items */
+        }
+        
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            margin-right: 1px;
+            margin-left: 10px;
+            line-height: 1.6;
+            color: #ccc;
+        }
+        
+        .nav-menu li a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+            line-height: 0.0;
+        }
+        
+        .nav-menu li a:hover {
+            color: #fff;
+        }
+        
+        .under {
+            text-decoration: none;
+        }
+
+        /* Projects Section Styling */
+        .projects-section {
+            padding: 60px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .projects-section h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .projects-section p {
+            color: #a0a0a0;
+            margin-bottom: 40px;
+        }
+
+        /* Project Filter Buttons */
+        .project-filter {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background-color: #2e3037;
+            color: #e0e0e0;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .filter-btn:hover {
+            background-color: #3e4047;
+        }
+
+        .filter-btn.active {
+            background-color: #007BFF;
+            color: #fff;
+        }
+
+        /* Grid container for project cards */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        /* Styling for each individual project card */
+        .project-card {
+            background-color: #1a1c22;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Styling for the project image */
+        .project-image-container {
+            width: 100%;
+            height: 200px; /* Adjust height as needed */
+            background-color: #2e3037; /* Placeholder background color */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #a0a0a0;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Styling for the content within the card */
+        .project-content {
+            padding: 20px;
+            flex-grow: 1; /* Allows content to take up remaining space */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project-content h3 {
+            margin-top: 0;
+            font-size: 20px;
+            color: #e0e0e0;
+        }
+
+        .project-content .description {
+            color: #a0a0a0;
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .project-tech-stack {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .tech-icon {
+            font-size: 20px;
+            color: #a0a0a0;
+        }
+
+        .project-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: #007BFF;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: #0056b3;
+        }
+
+        /* Class to hide projects that don't match the filter */
+        .project-card.hidden {
+            display: none;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 20px;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .navbar .logo {
+                font-size: 18px;
+            }
+            
+            .navbar .nav-menu {
+                gap: 15px;
+            }
+
+            .projects-section {
+                padding: 40px 20px;
+            }
+
+            .projects-section h1 {
+                font-size: 32px;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+          <a href="index.html" class="under ">
+          <div class="logo">Hussain Ammar Haider</div>
+          </a>
+          <ul class="nav-menu">
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#exp">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#"> Contact</a></li>
+          </ul>
+        </nav>
+    </header>
+
+    <main class="projects-section" id="projects">
+        <h1>Projects</h1>
+        <p>Notable work showcasing my expertise and achievements.</p>
+        
+        <div class="project-filter">
+            <button class="filter-btn active" data-category="all">All</button>
+            <button class="filter-btn" data-category="web">Web</button>
+            <button class="filter-btn" data-category="ai">AI</button>
+            <button class="filter-btn" data-category="flutter">Flutter</button>
+        </div>
+
+        <div class="project-grid">
+            <!-- Project Card 1 (Web Project) -->
+            <div class="project-card" data-category="flutter all">
+                <div class="project-image-container">
+                    <!-- Replace with your project image -->
+                    <img src="https://placehold.co/600x400/2e3037/a0a0a0?text=Flutter+Project" alt="flutter project" class="project-image" />
+                </div>
+                <div class="project-content">
+                    <div>
+                        <h3>To-do list app</h3>
+                        <p class="description">
+                            Developed a task management application in Flutter, refactored to use Provider for efficient state management. Implemented core functionalities including add, delete, and update tasks, ensuring real-time UI updates. Optimized performance with best practices and enhanced user experience by adding smooth UI/UX animations.
+                        </p>
+                    </div>
+                    <div class="project-tech-stack">
+                       <i class="devicon-flutter-plain"  style="font-size: 25px;"></i>
+                        <i class="devicon-dart-plain"  style="font-size: 25px;"></i>
+                    </div>
+                    <a href="#" class="project-link">View Project &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Project Card 2 (Web Project) -->
+            <div class="project-card" data-category="web all">
+                <div class="project-image-container">
+                    <!-- Replace with your project image -->
+                    <img src="https://placehold.co/600x400/2e3037/a0a0a0?text=Web+Project" alt="Web Project Screenshot" class="project-image" />
+                </div>
+                <div class="project-content">
+                    <div>
+                        <h3>Glamor Groove</h3>
+                        <p class="description">
+                            Built a fully functional e-commerce website with a responsive UI using HTML, CSS, and JavaScript. Implemented user authentication with JavaScript for login and sign-out functionality. Integrated Flask (Python) on the backend to manage billing and transaction records, ensuring smooth order processing and management.
+                        </p>
+                    </div>
+                    <div class="project-tech-stack">
+                        <i class="devicon-html5-plain"  style="font-size: 25px;"></i>
+                        <i class="devicon-css3-plain"  style="font-size: 25px;"></i>
+                        <i class="devicon-javascript-plain"  style="font-size: 25px;"></i>
+                        <i class="devicon-python-plain"  style="font-size: 25px;"></i>
+                        <i class="devicon-flask-plain"  style="font-size: 25px;"></i>
+                    </div>
+                    <a href="#" class="project-link">View Project &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Project Card 3 (AI Project) -->
+            <div class="project-card" data-category="web all">
+                <div class="project-image-container">
+                    <!-- Replace with your project image -->
+                    <img src="https://placehold.co/600x400/2e3037/a0a0a0?text=Web+Project" alt="AI Project Screenshot" class="project-image" />
+                </div>
+                <div class="project-content">
+                    <div>
+                        <h3>Techsod</h3>
+                        <p class="description">
+                            Developed a single-page website for a software house to showcase its motive, objectives, services, and projects in a clean, modern layout. Designed with HTML, CSS, and JavaScript for responsiveness and interactivity. Integrated a contact form with PHP for seamless email functionality, allowing users to connect directly.
+                        </p>
+                    </div>
+                    <div class="project-tech-stack">
+                        <i class="devicon-html5-plain"  style="font-size: 25px;"></i>
+                        <i class="devicon-css3-plain"  style="font-size: 25px;"></i>
+                        <i class="devicon-javascript-plain"  style="font-size: 25px;"></i>
+                        <i class="devicon-php-plain"  style="font-size: 25px;"></i>
+                    </div>
+                    <a href="#" class="project-link">View Project &rarr;</a>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="web all">
+                <div class="project-image-container">
+                    <!-- Replace with your project image -->
+                    <img src="https://placehold.co/600x400/2e3037/a0a0a0?text=Web+Project" alt="AI Project Screenshot" class="project-image" />
+                </div>
+                <div class="project-content">
+                    <div>
+                        <h3>Carlton Cab Service</h3>
+                        <p class="description">
+                            Created and published a professional single-page website for a UK-based cab service using GoDaddy’s website builder. The site showcases the company’s mission, services, fleet, and booking options, with a built-in contact form for customer ride requests.
+                        </p>
+                    </div>
+                    <div class="project-tech-stack">
+                        <i class="fa-solid fa-globe"  style="font-size: 25px;"></i>
+                        
+                    </div>
+                    <a href="#" class="project-link">View Project &rarr;</a>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="ai all">
+                <div class="project-image-container">
+                    <!-- Replace with your project image -->
+                    <img src="https://placehold.co/600x400/2e3037/a0a0a0?text=AI+Project" alt="AI Project Screenshot" class="project-image" />
+                </div>
+                <div class="project-content">
+                    <div>
+                        <h3>Sentiment Analysis using RNN</h3>
+                        <p class="description">
+                            Developed a deep learning model to perform sentiment analysis on text data using a Recurrent Neural Network (RNN). Preprocessed and tokenized textual data, trained the model using TensorFlow/Keras, and evaluated performance with accuracy and confusion matrix. Demonstrated skills in natural language processing, sequence modeling, and deep learning.
+                        </p>
+                    </div>
+                    <div class="project-tech-stack">
+                        <i class="devicon-python-plain " style="font-size: 25px;"></i>
+                        <i class="devicon-numpy-original " style="font-size: 25px;"></i>
+                        <i class="devicon-tensorflow-original" style="font-size: 25px;"></i>
+                        <i class="devicon-scikitlearn-plain" style="font-size: 25px;"></i>
+                        
+                        
+                    </div>
+                    <a href="#" class="project-link">View Project &rarr;</a>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="ai all">
+                <div class="project-image-container">
+                    <!-- Replace with your project image -->
+                    <img src="https://placehold.co/600x400/2e3037/a0a0a0?text=AI+Project" alt="AI Project Screenshot" class="project-image" />
+                </div>
+                <div class="project-content">
+                    <div>
+                        <h3>Whether a customer will churn or not using ANN</h3>
+                        <p class="description">
+                            Developed a deep learning model to predict whether a customer will churn or stay using an Artificial Neural Network (ANN). Preprocessed customer data, handled categorical and numerical features, trained the model with TensorFlow/Keras, and evaluated performance using accuracy and confusion matrix. Demonstrated skills in predictive analytics, neural networks, and data preprocessing.
+                        </p>
+                    </div>
+                    <div class="project-tech-stack">
+                        <i class="devicon-python-plain " style="font-size: 25px;"></i>
+                        <i class="devicon-numpy-original " style="font-size: 25px;"></i>
+                        <i class="devicon-tensorflow-original" style="font-size: 25px;"></i>
+                        <i class="devicon-scikitlearn-plain" style="font-size: 25px;"></i>
+                        
+                        
+                    </div>
+                    <a href="#" class="project-link">View Project &rarr;</a>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="ai all">
+                <div class="project-image-container">
+                    <!-- Replace with your project image -->
+                    <img src="https://placehold.co/600x400/2e3037/a0a0a0?text=AI+Project" alt="AI Project Screenshot" class="project-image" />
+                </div>
+                <div class="project-content">
+                    <div>
+                        <h3>Mean Value of House in Boston using ANN</h3>
+                        <p class="description">
+                            Boston Housing Price Predictor (Artificial Neural Network, Python, TensorFlow/Keras)
+                            Built a deep learning model to predict the mean value of houses in Boston using an Artificial Neural Network (ANN). Preprocessed and normalized housing dataset features, trained the model with TensorFlow/Keras, and evaluated performance using regression metrics like RMSE and R² score. Demonstrated skills in regression modeling, neural networks, and predictive analytics.
+                        </p>
+                    </div>
+                    <div class="project-tech-stack">
+                        <i class="devicon-python-plain " style="font-size: 25px;"></i>
+                        <i class="devicon-numpy-original " style="font-size: 25px;"></i>
+                        <i class="devicon-tensorflow-original" style="font-size: 25px;"></i>
+                        <i class="devicon-scikitlearn-plain" style="font-size: 25px;"></i>
+                        
+                        
+                    </div>
+                    <a href="#" class="project-link">View Project &rarr;</a>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="ai all">
+                <div class="project-image-container">
+                    <!-- Replace with your project image -->
+                    <img src="https://placehold.co/600x400/2e3037/a0a0a0?text=AI+Project" alt="AI Project Screenshot" class="project-image" />
+                </div>
+                <div class="project-content">
+                    <div>
+                        <h3>Email Spam Detecion using Logistic Regression</h3>
+                        <p class="description">
+                            Developed a machine learning model to classify emails as spam or not spam using Logistic Regression. Preprocessed text data with tokenization and feature extraction (Bag of Words/TF-IDF), then trained and evaluated the model with Scikit-learn. Achieved accurate predictions, demonstrating effective use of binary classification techniques in real-world scenarios.
+                        </p>
+                    </div>
+                    <div class="project-tech-stack">
+                        <i class="devicon-python-plain " style="font-size: 25px;"></i>
+                        <i class="devicon-numpy-original " style="font-size: 25px;"></i>
+                        <i class="devicon-pandas-original" style="font-size: 25px;"></i>
+                        <i class="devicon-scikitlearn-plain" style="font-size: 25px;"></i>
+                        
+                    </div>
+                    <a href="#" class="project-link">View Project &rarr;</a>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="ai all">
+                <div class="project-image-container">
+                    <!-- Replace with your project image -->
+                    <img src="https://placehold.co/600x400/2e3037/a0a0a0?text=AI+Project" alt="AI Project Screenshot" class="project-image" />
+                </div>
+                <div class="project-content">
+                    <div>
+                        <h3>Email Spam Detecion using Decision Tree</h3>
+                        <p class="description">
+                            Implemented a machine learning model to classify emails as spam or not spam using a Decision Tree Classifier. Preprocessed and vectorized text data (Bag of Words/TF-IDF), trained the model with Scikit-learn, and evaluated performance with accuracy and confusion matrix. This project highlights skills in text preprocessing, feature engineering, and supervised learning.
+                        </p>
+                    </div>
+                    <div class="project-tech-stack">
+                        <i class="devicon-python-plain " style="font-size: 25px;"></i>
+                        <i class="devicon-numpy-original " style="font-size: 25px;"></i>
+                        <i class="devicon-pandas-original" style="font-size: 25px;"></i>
+                        <i class="devicon-scikitlearn-plain" style="font-size: 25px;"></i>
+                        
+                    </div>
+                    <a href="#" class="project-link">View Project &rarr;</a>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="ai all">
+                <div class="project-image-container">
+                    <!-- Replace with your project image -->
+                    <img src="https://placehold.co/600x400/2e3037/a0a0a0?text=AI+Project" alt="AI Project Screenshot" class="project-image" />
+                </div>
+                <div class="project-content">
+                    <div>
+                        <h3>Stock Predictor using Random Forest Regressor</h3>
+                        <p class="description">
+                            Developed a machine learning model to predict the closing price of stocks using a Random Forest Regressor. Collected and preprocessed historical stock data, performed feature engineering, and trained the model with Scikit-learn. Evaluated performance using metrics like RMSE and R² score, demonstrating skills in time series prediction and regression analysis.
+                        </p>
+                    </div>
+                    <div class="project-tech-stack">
+                        <i class="devicon-python-plain " style="font-size: 25px;"></i>
+                        <i class="devicon-numpy-original " style="font-size: 25px;"></i>
+                        <i class="devicon-pandas-original" style="font-size: 25px;"></i>
+                        <i class="devicon-scikitlearn-plain" style="font-size: 25px;"></i>
+                        
+                    </div>
+                    <a href="#" class="project-link">View Project &rarr;</a>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="ai all">
+                <div class="project-image-container">
+                    <!-- Replace with your project image -->
+                    <img src="https://placehold.co/600x400/2e3037/a0a0a0?text=AI+Project" alt="AI Project Screenshot" class="project-image" />
+                </div>
+                <div class="project-content">
+                    <div>
+                        <h3>Vehicle Quarter Mile Time Predictor using Decision Tree Regressor</h3>
+                        <p class="description">
+                            Built a machine learning model to predict the quarter-mile time of vehicles using a Decision Tree Regressor. Collected and preprocessed vehicle performance data, engineered relevant features, and trained the model with Scikit-learn. Evaluated predictions using regression metrics like RMSE and R², showcasing skills in regression modeling and predictive analytics.
+                        </p>
+                    </div>
+                    <div class="project-tech-stack">
+                        <i class="devicon-python-plain " style="font-size: 25px;"></i>
+                        <i class="devicon-numpy-original " style="font-size: 25px;"></i>
+                        <i class="devicon-pandas-original" style="font-size: 25px;"></i>
+                        <i class="devicon-scikitlearn-plain" style="font-size: 25px;"></i>
+                        
+                    </div>
+                    <a href="#" class="project-link">View Project &rarr;</a>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="ai all">
+                <div class="project-image-container">
+                    <!-- Replace with your project image -->
+                    <img src="https://placehold.co/600x400/2e3037/a0a0a0?text=AI+Project" alt="AI Project Screenshot" class="project-image" />
+                </div>
+                <div class="project-content">
+                    <div>
+                        <h3>Income Class Predictor using Kmeans Clustering</h3>
+                        <p class="description">
+                            Developed an unsupervised machine learning model to classify individuals into income classes using K-Means Clustering. Performed data preprocessing, feature scaling, and clustering analysis to identify patterns in the dataset. Visualized clusters and evaluated results to gain insights into income distribution, demonstrating skills in data analysis, clustering, and pattern recognition.
+                        </p>
+                    </div>
+                    <div class="project-tech-stack">
+                        <i class="devicon-python-plain " style="font-size: 25px;"></i>
+                        <i class="devicon-numpy-original " style="font-size: 25px;"></i>
+                        <i class="devicon-pandas-original" style="font-size: 25px;"></i>
+                        <i class="devicon-scikitlearn-plain" style="font-size: 25px;"></i>
+                        
+                    </div>
+                    <a href="#" class="project-link">View Project &rarr;</a>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="ai all">
+                <div class="project-image-container">
+                    <!-- Replace with your project image -->
+                    <img src="https://placehold.co/600x400/2e3037/a0a0a0?text=AI+Project" alt="AI Project Screenshot" class="project-image" />
+                </div>
+                <div class="project-content">
+                    <div>
+                        <h3>Cancer predictor using KNN</h3>
+                        <p class="description">
+                            Built a machine learning model to predict cancer diagnosis using the K-Nearest Neighbors (KNN) algorithm. Preprocessed medical dataset features, performed feature scaling, trained and evaluated the model using Scikit-learn, and achieved accurate classification. Demonstrated skills in data preprocessing, supervised learning, and predictive analytics.
+                        </p>
+                    </div>
+                    <div class="project-tech-stack">
+                        <i class="devicon-python-plain " style="font-size: 25px;"></i>
+                        <i class="devicon-numpy-original " style="font-size: 25px;"></i>
+                        <i class="devicon-pandas-original" style="font-size: 25px;"></i>
+                        <i class="devicon-scikitlearn-plain" style="font-size: 25px;"></i>
+                        
+                    </div>
+                    <a href="#" class="project-link">View Project &rarr;</a>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="ai all">
+                <div class="project-image-container">
+                    <!-- Replace with your project image -->
+                    <img src="https://placehold.co/600x400/2e3037/a0a0a0?text=AI+Project" alt="AI Project Screenshot" class="project-image" />
+                </div>
+                <div class="project-content">
+                    <div>
+                        <h3>Cancer predictor using SVM</h3>
+                        <p class="description">
+                            Developed a machine learning model to predict cancer diagnosis using a Support Vector Machine (SVM) algorithm. Preprocessed and normalized medical dataset features, trained the model with Scikit-learn, and evaluated performance using accuracy and confusion matrix. Demonstrated expertise in supervised learning, data preprocessing, and predictive modeling.
+                        </p>
+                    </div>
+                    <div class="project-tech-stack">
+                        <i class="devicon-python-plain " style="font-size: 25px;"></i>
+                        <i class="devicon-numpy-original " style="font-size: 25px;"></i>
+                        <i class="devicon-pandas-original" style="font-size: 25px;"></i>
+                        <i class="devicon-scikitlearn-plain" style="font-size: 25px;"></i>
+                        
+                    </div>
+                    <a href="#" class="project-link">View Project &rarr;</a>
+                </div>
+            </div>
+                        
+            <div class="project-card" data-category="ai all">
+                <div class="project-image-container">
+                    <!-- Replace with your project image -->
+                    <img src="https://placehold.co/600x400/2e3037/a0a0a0?text=AI+Project" alt="AI Project Screenshot" class="project-image" />
+                </div>
+                <div class="project-content">
+                    <div>
+                        <h3>Online Purchase Probability Predictor using Logistic Regression</h3>
+                        <p class="description">
+                            Built a machine learning model to predict whether a user will make an online purchase using Logistic Regression. Preprocessed and transformed user behavioral data, trained and evaluated the model with Scikit-learn, and analyzed results using accuracy metrics. Showcased skills in binary classification, data preprocessing, and predictive analytics.
+                        </p>
+                    </div>
+                    <div class="project-tech-stack">
+                        <i class="devicon-python-plain " style="font-size: 25px;"></i>
+                        <i class="devicon-numpy-original " style="font-size: 25px;"></i>
+                        <i class="devicon-pandas-original" style="font-size: 25px;"></i>
+                        <i class="devicon-scikitlearn-plain" style="font-size: 25px;"></i>
+                        
+                    </div>
+                    <a href="#" class="project-link">View Project &rarr;</a>
+                </div>
+            </div>
+       
+            
+
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+
+            // Add an event listener to each filter button
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove 'active' class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add 'active' class to the clicked button
+                    button.classList.add('active');
+
+                    // Get the category from the data attribute of the clicked button
+                    const category = button.getAttribute('data-category');
+
+                    // Loop through all project cards
+                    projectCards.forEach(card => {
+                        const cardCategories = card.getAttribute('data-category');
+
+                        // Show or hide the card based on the selected category
+                        if (category === 'all' || cardCategories.includes(category)) {
+                            card.classList.remove('hidden');
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
