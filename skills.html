@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hussain Ammar Haider - Skills</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+    <style>
+        /* General body and font styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #0f1117;
+            color: #e0e0e0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Light mode styles */
+        body.light-mode {
+            background-color: #f0f2f5;
+            color: #333;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+    display: flex;
+    justify-content: flex-start; /* Aligns children (logo & menu) to the left */
+    padding: 20px;
+    background-color: transparent;
+    top: 0;
+    left: 0;
+    width: 100%; /* Ensures full width */
+    z-index: 1000; 
+  /* Keeps navbar above other content */
+    
+  }
+
+.nav-menu {
+    display: flex; /* Makes the list items (li) arrange horizontally */
+    list-style: none;
+    gap: 25px; /* Modern way to add space between flex items */
+}
+  
+  .logo {
+    font-size: 26px;
+    font-weight: bold;
+    margin-right: 1px;
+    margin-left: 10px;
+    line-height: 1.6;
+    color: #ccc;
+  }
+  
+  
+  .nav-menu li a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+    line-height: 0.0;
+  }
+  
+  .nav-menu li a:hover {
+    color: #fff;
+  }
+  .under{
+    text-decoration: none;
+  }
+
+
+        /* Theme Toggle Button */
+        .theme-toggle-btn {
+            background: none;
+            border: none;
+            color: #a0a0a0;
+            font-size: 20px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .theme-toggle-btn:hover {
+            color: #fff;
+        }
+
+        body.light-mode .theme-toggle-btn {
+            color: #666;
+        }
+
+        body.light-mode .theme-toggle-btn:hover {
+            color: #000;
+        }
+
+        /* Main Skills Section */
+        .skills-section {
+            padding: 60px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .skills-section h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .skills-section p {
+            color: #a0a0a0;
+            margin-bottom: 40px;
+        }
+
+        body.light-mode .skills-section h1 {
+            color: #333;
+        }
+
+        body.light-mode .skills-section p {
+            color: #666;
+        }
+
+        /* Skills Grid Layout */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        /* Individual Skill Card Styling */
+        .skill-card {
+            background-color: #1a1c22;
+            padding: 25px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            border: 1px solid #2d2d2d;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s, background-color 0.3s, border-color 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+        }
+
+        body.light-mode .skill-card {
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Skill Card Header */
+        .skill-card .card-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .skill-card .skill-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #2e3037;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        body.light-mode .skill-card .skill-icon {
+            background-color: #e6e8eb;
+        }
+        
+        .skill-card h3 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .skill-card .description {
+            color: #a0a0a0;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        body.light-mode .skill-card .description {
+            color: #666;
+        }
+
+        .skill-card .rating {
+            color: #ffc107; /* Star rating color */
+            font-size: 16px;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 20px;
+            }
+
+            .navbar .logo {
+                font-size: 18px;
+            }
+            
+            .navbar .nav-menu {
+                gap: 15px;
+            }
+
+            .skills-section {
+                padding: 40px 20px;
+            }
+
+            .skills-section h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+          <a href="index.html" class="under ">
+          <div class="logo">Hussain Ammar Haider</div>
+          </a>
+          <ul class="nav-menu">
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#exp">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#"> Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+    <main class="skills-section">
+        <h1>Skills</h1>
+        <p>Key skills that define my professional identity.</p>
+
+        <div class="skills-grid">
+            
+            <!-- Next.js Card -->
+            <div class="skill-card">
+                <div class="card-header">
+                    <div class="skill-icon">
+                        <i class="devicon-html5-plain" style="font-size: 30px;"></i>
+                    </div>
+                    <h3>HTML</h3>
+                </div>
+                <p class="description"> Structure the web with the standard markup language for creating web pages.</p>
+                <div class="rating">
+                    <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                </div>
+            </div>
+
+            <!-- React Card -->
+            <div class="skill-card">
+                <div class="card-header">
+                    <div class="skill-icon">
+                        <i class="fa-brands fa-css3" style="font-size: 30px;"></i>
+                    </div>
+                    <h3>CSS</h3>
+                </div>
+                <p class="description">Style and design beautiful, responsive web interfaces with cascading style sheets.</p>
+                <div class="rating">
+                    <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                </div>
+            </div>
+
+            <!-- Express.js Card -->
+            <div class="skill-card">
+                <div class="card-header">
+                    <div class="skill-icon">
+                        <i class = "fa-brands fa-js" style="font-size: 30px;"></i>
+                    </div>
+                    <h3>JavaScript</h3>
+                </div>
+                <p class="description">Add interactivity and dynamic behavior to websites with the language of the web.</p>
+                <div class="rating">
+                    <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                </div>
+            </div>
+
+            <!-- Node.js Card -->
+            <div class="skill-card">
+                <div class="card-header">
+                    <div class="skill-icon">
+                        <i class="fa-brands fa-bootstrap" style="font-size: 30px;"></i>
+                    </div>
+                    <h3>Bootstrap</h3>
+                </div>
+                <p class="description"> Build responsive, mobile-first websites quickly with a popular CSS framework.</p>
+                <div class="rating">
+                    <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                </div>
+            </div>
+
+            <!-- MongoDB Card -->
+            <div class="skill-card">
+                <div class="card-header">
+                    <div class="skill-icon">
+                        <i class="devicon-mysql-plain" style="font-size: 30px;"></i>
+                    </div>
+                    <h3>MySql</h3>
+                </div>
+                <p class="description">Manage and query relational databases with a fast, reliable SQL-based system.</p>
+                <div class="rating">
+                    <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                </div>
+            </div>
+
+            <!-- Typescript Card -->
+            <div class="skill-card">
+                <div class="card-header">
+                    <div class="skill-icon">
+                        <i class="fa-brands fa-python" style="font-size: 30px;"></i>
+                    </div>
+                    <h3>Python</h3>
+                </div>
+                <p class="description">Develop versatile applications with a powerful, easy-to-learn programming language.</p>
+                <div class="rating">
+                    <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="card-header">
+                    <div class="skill-icon">
+                        <i class="fa-solid fa-robot" style="font-size: 30px;"></i>
+                    </div>
+                    <h3>Machine Learning</h3>
+                </div>
+                <p class="description">Create intelligent systems that learn and improve from data automatically.</p>
+                <div class="rating">
+                    <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="card-header">
+                    <div class="skill-icon">
+                        <i class="fa-solid fa-brain" style="font-size: 30px;"></i>
+                    </div>
+                    <h3>Neural Networks</h3>
+                </div>
+                <p class="description">Model complex patterns using interconnected layers of artificial neurons.</p>
+                <div class="rating">
+                    <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="card-header">
+                    <div class="skill-icon">
+                        <i class="fa-solid fa-comments" style="font-size: 30px;"></i>
+                    </div>
+                    <h3>Large Language Models</h3>
+                </div>
+                <p class="description"> Build advanced natural language applications using large-scale AI language models.</p>
+                <div class="rating">
+                    <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="card-header">
+                    <div class="skill-icon">
+                        <i class="fa-solid fa-image" style="font-size: 30px;"></i> 
+                    </div>
+                    <h3>AI Computer Vision</h3>
+                </div>
+                <p class="description">Enable machines to interpret and understand visual data from the world.</p>
+                <div class="rating">
+                    <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="card-header">
+                    <div class="skill-icon">
+                        <i class="fas fa-language" style="font-size: 30px;"></i>
+                    </div>
+                    <h3>Language Language Processing</h3>
+                </div>
+                <p class="description">Extract meaning, sentiment, and insights from text using advanced language models and AI.</p>
+                <div class="rating">
+                    <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="card-header">
+                    <div class="skill-icon">
+                        <i class="fas fa-chart-bar" style="font-size: 30px;"></i>
+                    </div>
+                    <h3>Data Science</h3>
+                </div>
+                <p class="description">Turn raw data into actionable insights with statistical analysis, machine learning, and visualization..</p>
+                <div class="rating">
+                    <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                </div>
+            </div>
+
+            <!-- JavaScript Card -->
+            <div class="skill-card">
+                <div class="card-header">
+                    <div class="skill-icon">
+                        <i class="devicon-flutter-plain" style="font-size: 30px;"></i>
+                    </div>
+                    <h3>Flutter</h3>
+                </div>
+                <p class="description">Build beautiful, cross-platform apps from a single codebase with Google’s UI toolkit.</p>
+                <div class="rating">
+                    <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                </div>
+            </div>
+
+            <!-- Tailwind CSS Card -->
+            <div class="skill-card">
+                <div class="card-header">
+                    <div class="skill-icon">
+                        <i class="devicon-dart-plain" style="font-size: 30px;"></i>
+                    </div>
+                    <h3>Dart</h3>
+                </div>
+                <p class="description">Write fast, expressive, and type-safe code for modern app development.</p>
+                <div class="rating">
+                    <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                </div>    
+            </div>
+
+            <div class="skill-card">
+                <div class="card-header">
+                    <div class="skill-icon">
+                        <i class="devicon-java-plain" style="font-size: 30px;"></i>
+                    </div>
+                    <h3>JAVA</h3>
+                </div>
+                <p class="description">Develop robust, cross-platform applications with a reliable, object-oriented language.</p>
+                <div class="rating">
+                    <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="card-header">
+                    <div class="skill-icon">
+                        <i class="devicon-kotlin-plain" style="font-size: 30px;"></i>
+                    </div>
+                    <h3>Kotlin</h3>
+                </div>
+                <p class="description">Create modern, concise, and safe applications for Android and beyond.</p>
+                <div class="rating">
+                    <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="card-header">
+                    <div class="skill-icon">
+                        <i class="devicon-cplusplus-plain" style="font-size: 30px;"></i>
+                    </div>
+                    <h3>C++</h3>
+                </div>
+                <p class="description">Build high-performance software with a powerful, efficient systems programming language.</p>
+                <div class="rating">
+                    <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="card-header">
+                    <div class="skill-icon">
+                        <i class="devicon-docker-plain" style="font-size: 30px;"></i>
+                    </div>
+                    <h3>Docker</h3>
+                </div>
+                <p class="description">Package, ship, and run applications anywhere with lightweight, portable containers.</p>
+                <div class="rating">
+                    <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                </div>
+            </div>
+            
+            
+            
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            const body = document.body;
+
+            themeToggleBtn.addEventListener('click', () => {
+                body.classList.toggle('light-mode');
+
+                const icon = themeToggleBtn.querySelector('i');
+                if (body.classList.contains('light-mode')) {
+                    icon.classList.remove('fa-moon');
+                    icon.classList.add('fa-sun');
+                } else {
+                    icon.classList.remove('fa-sun');
+                    icon.classList.add('fa-moon');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
