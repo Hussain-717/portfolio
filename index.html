@@ -6,17 +6,17 @@
   <title>Hussain Ammar Haider - Portfolio</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 </head>
 <body>
   <header>
     <nav class="navbar">
       <div class="logo">Hussain Ammar Haider</div>
       <ul class="nav-menu">
-        <li><a href="#">Skills</a></li>
-        <li><a href="#">Experience</a></li>
-        <li><a href="#">Career</a></li>
-        <li><a href="#">Contributions</a></li>
-        <li><a href="#"> Contact</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#exp">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="contact.html"> Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -24,16 +24,15 @@
   <section class="hero">
     <img src="assets/portfolio.jpg" alt="Ahmed Raza" class="avatar" />
     <h1 style="font-size: 50px;">Hussain Ammar Haider</h1>
-    <h2 style="font-size: 20px;">Full Stack Developer</h2>
+    <h2 style="font-size: 20px;">Developer — Web, Mobile & AI</h2>
     <p>
-      I am a full stack developer with a strong passion for crafting responsive, user-friendly applications.
-      From intuitive front-end interfaces to robust back-end systems, I enjoy building complete web solutions.
+        I build seamless digital experiences — from responsive websites and mobile apps using Flutter, to intelligent systems powered by Python and AI. I’m passionate about combining design, code, and data to craft meaningful and scalable solutions.
     </p>
     <div class="cta-buttons">
-      <a href="https://www.linkedin.com/in/hussain-ammar-b84916319?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="btn github" target="_blank">
-        <img src="assets/github.jpg" alt="GitHub" /> GitHub
+      <a href="https://github.com/Hussain-717" class="btn github" target="_blank">
+        <img src="assets/github.png" alt="GitHub"  /> GitHub
       </a>
-      <a href="#" class="btn contact">
+      <a href="contact.html" class="btn contact">
     <i class="fa-solid fa-phone"></i>
     <span>Contact</span>
 </a>
@@ -42,7 +41,7 @@
     <div class="scroll-down">⌄</div>
   </section>
 
-  <section class="skills-section">
+  <section class="skills-section" id="skills">
         <div class="container">
             <div class="skills-header">
                 <h2>Skills</h2>
@@ -50,9 +49,9 @@
             </div>
             <div class="skills-grid">
                 <div class="skill-card">
-                    <img src="nextjs-logo.png" alt="Next.js Logo">
-                    <h3>Next.js</h3>
-                    <p>Effortlessly build dynamic apps with routing, layouts, loading UI, and API routes.</p>
+                    <i class="devicon-html5-plain" style="font-size: 40px; padding-bottom: 20px;"></i>
+                    <h3>HTML</h3>
+                    <p>Structure web content using semantic elements and organize layout for responsive design.</p>
                     <div class="stars">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
@@ -62,9 +61,9 @@
                     </div>
                 </div>
                 <div class="skill-card">
-                    <img src="react-logo.png" alt="React Logo">
-                    <h3>React</h3>
-                    <p>Craft interactive user interfaces using components, state, props, and virtual DOM.</p>
+                    <i class="devicon-css3-plain" style="font-size: 40px; padding-bottom: 20px;"></i> 
+                    <h3>CSS</h3>
+                    <p>Style and visually enhance web pages with layouts, animations, and responsive design.</p>
                     <div class="stars">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
@@ -74,9 +73,9 @@
                     </div>
                 </div>
                 <div class="skill-card">
-                    <img src="express-logo.png" alt="Express.js Logo">
-                    <h3>Express.js</h3>
-                    <p>Build web applications and APIs quickly using a fast, unopinionated Node.js framework.</p>
+                    <i class="devicon-javascript-plain" style="font-size: 40px; padding-bottom: 20px;"></i> 
+                    <h3>JavaScript</h3>
+                    <p>Create dynamic, interactive web experiences through events, DOM manipulation, and logic.</p>
                     <div class="stars">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
@@ -86,9 +85,9 @@
                     </div>
                 </div>
                 <div class="skill-card">
-                    <img src="nodejs-logo.png" alt="Node.js Logo">
-                    <h3>Node.js</h3>
-                    <p>Run JavaScript on the server side, enabling dynamic and responsive applications.</p>
+                    <i class="devicon-mysql-plain" style="font-size: 40px; padding-bottom: 20px;"></i> 
+                    <h3>MySql</h3>
+                    <p>Store, query, and manage relational data using structured SQL commands and transactions.</p>
                     <div class="stars">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
@@ -98,9 +97,9 @@
                     </div>
                 </div>
                 <div class="skill-card">
-                    <img src="mongodb-logo.png" alt="MongoDB Logo">
-                    <h3>MongoDB</h3>
-                    <p>Store and retrieve data seamlessly with a flexible and scalable NoSQL database.</p>
+                    <i class="devicon-python-plain" style="font-size: 40px; padding-bottom: 20px;"></i>
+                    <h3>Python</h3>
+                    <p>Build intelligent systems using Python for data processing, machine learning, and AI automation.</p>
                     <div class="stars">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
@@ -110,9 +109,9 @@
                     </div>
                 </div>
                 <div class="skill-card">
-                    <img src="typescript-logo.png" alt="Typescript Logo">
-                    <h3>Typescript</h3>
-                    <p>Enhance JavaScript with static types, making code more understandable and reliable.</p>
+                    <i class="devicon-flutter-plain" style="font-size: 40px; padding-bottom: 20px;"></i> 
+                    <h3>Flutter</h3>
+                    <p>Develop beautiful, cross-platform apps using widgets, state management, and Dart.</p>
                     <div class="stars">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
@@ -121,80 +120,71 @@
                         <i class="fa-solid fa-star"></i>
                     </div>
                 </div>
+                
             </div>
+            <a href="skills.html">
             <button class="view-all-button">
                <i class="fa-solid fa-chevron-down"></i>
              <span>View All</span>
             </button>
+            </a>
         </div>
     </section>
 
-    <section class="experience-section">
+    <section class="experience-section" id="exp">
  <div class="container">
   <div class="experience-header">
    <h2>Experience</h2>
-   <p>Highlighting career journey and impactful projects.</p>
+   <p>Highlighting career journey and impactful experiences.</p>
   </div>
   <div class="experience-grid">
    <div class="experience-card">
     <div class="card-image">
-     <img src="built-design-logo.png" alt="BuiltDesign Logo">
+     <img src="assets/switch.jpg" alt="BuiltDesign Logo">
     </div>
     <div class="card-content">
-     <h3>BuiltDesign</h3>
-     <p>Developed and optimized a high-performing website catering to over 4000 users, emphasizing efficiency and...</p>
+     <h3>Game Developer — Switch Communication(2023-2025)</h3>
+     <p>As a Game Developer, I built engaging 2D games in Construct 3, applying strong logic-building skills with JavaScript and JSON for gameplay mechanics and data handling. Designed and optimized sprites, assisted in UI/UX improvements, and ensured smooth, interactive player experiences.</p>
      <div class="card-tags">
-      <span class="tag">Web Dev</span>
-      <span class="tag">Full Stack</span>
-      <span class="tag">UI/UX</span>
-     </div>
-     <div class="card-actions">
-      <a href="#" class="read-more-link">Read more <i class="fa-solid fa-arrow-right"></i></a>
-      <button class="project-details-button">
-       <i class="fa-solid fa-code"></i>
-      </button>
+        <span class="tag">Game-Dev</span>
+        <span class="tag">Construct3</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">JSON</span>
+        <span class="tag">UI/UX</span>
      </div>
     </div>
    </div>
 
    <div class="experience-card">
     <div class="card-image">
-     <img src="super-quotes-logo.png" alt="The Super Quotes Logo">
+     <img src="assets/devHub.png" alt="The Super Quotes Logo">
     </div>
     <div class="card-content">
-     <h3>The Super Quotes</h3>
-     <p>Elevated The Super Quotes app with JavaScript, React Native, APIs, Redux magic, and Google Play Store debut.</p>
+     <h3>Flutter Intern — Developers Hub (3 Months)</h3>
+     <p>As a Flutter Intern, I built cross-platform mobile apps with efficient state management and persistent storage, integrated Firebase for authentication and data, designed clean UI/UX, and optimized performance to ensure smooth, responsive, and engaging user experiences.</p>
      <div class="card-tags">
       <span class="tag">Mobile Dev</span>
-      <span class="tag">Full Stack</span>
+      <span class="tag">Flutter</span>
+      <span class="tag">Dart</span>
+      <span class="tag">Firebase</span>
       <span class="tag">UI/UX</span>
-     </div>
-     <div class="card-actions">
-      <a href="#" class="read-more-link">Read more <i class="fa-solid fa-arrow-right"></i></a>
-      <button class="project-details-button">
-       <i class="fa-solid fa-code"></i>
-      </button>
      </div>
     </div>
    </div>
 
    <div class="experience-card">
     <div class="card-image">
-     <img src="apex-shopping-app-logo.png" alt="Apex Shopping App Logo">
+     <img src="assets/ezitechsolutions_logo.jpg" alt="Apex Shopping App Logo">
     </div>
     <div class="card-content">
-     <h3>Apex Shopping App</h3>
-     <p>Developed a feature-rich mobile shopping application with admin panel, user authentication, and seamless product...</p>
+     <h3>AI Intern — EziTech Solutions (3 Months)</h3>
+     <p>As an AI Intern, I developed and optimized machine learning models, performed data preprocessing and feature engineering, implemented computer vision and NLP solutions, and integrated AI features into applications to deliver accurate, efficient, and impactful intelligent systems.</p>
      <div class="card-tags">
-      <span class="tag">Mobile Dev</span>
-      <span class="tag">Full Stack</span>
-      <span class="tag">UI/UX</span>
-     </div>
-     <div class="card-actions">
-      <a href="#" class="read-more-link">Read more <i class="fa-solid fa-arrow-right"></i></a>
-      <button class="project-details-button">
-       <i class="fa-solid fa-user"></i>
-      </button>
+      <span class="tag">AI</span>
+      <span class="tag">ML</span>
+      <span class="tag">DL</span>
+      <span class="tag">LLM</span>
+      <span class="tag">Computer Vision</span>
      </div>
     </div>
    </div>
@@ -202,22 +192,22 @@
  </div>
 </section>
 
-<section class="contributions-section">
+<section class="contributions-section" id="projects">
     <div class="container">
         <div class="contributions-header">
-            <h2>Contributions</h2>
-            <p>Open-source contributions and community involvement.</p>
+            <h2>Projects</h2>
+            <p>Notable work showcasing my expertise and achievements.</p>
         </div>
         <div class="contributions-grid">
             <div class="contribution-card">
                 <div class="card-title">
                     <i class="fa-solid fa-folder-open"></i>
-                    <span>autogen</span>
+                    <span>To-do List App</span>
                     <i class="fa-solid fa-link"></i>
                 </div>
-                <p>Improved the gallery component to showcase the community work.</p>
+                <p>Developed a task management application in Flutter, refactored to use Provider for efficient state management. Implemented core functionalities including add, delete, and update tasks, ensuring real-time UI updates. Optimized performance with best practices and enhanced user experience by adding smooth UI/UX animations.</p>
                 <div class="card-footer">
-                    <span class="organization">Microsoft</span>
+                    <span></span>
                     <a href="#" class="github-link" aria-label="View on GitHub">
                         <i class="fa-solid fa-arrow-up-right-from-square"></i>
                     </a>
@@ -227,12 +217,12 @@
             <div class="contribution-card">
                 <div class="card-title">
                     <i class="fa-solid fa-folder-open"></i>
-                    <span>creativecommons</span>
+                    <span>Glamour Groove</span>
                     <i class="fa-solid fa-link"></i>
                 </div>
-                <p>Closed issue: Fixed navbar issue on the main website of creative common.</p>
+                <p>Built a fully functional e-commerce website with a responsive UI using HTML, CSS, and JavaScript. Implemented user authentication with JavaScript for login and sign-out functionality. Integrated Flask (Python) on the backend to manage billing and transaction records, ensuring smooth order processing and management.</p>
                 <div class="card-footer">
-                    <span class="organization">Creative Commons</span>
+                    <span></span>
                     <a href="#" class="github-link" aria-label="View on GitHub">
                         <i class="fa-solid fa-arrow-up-right-from-square"></i>
                     </a>
@@ -242,29 +232,34 @@
             <div class="contribution-card">
                 <div class="card-title">
                     <i class="fa-solid fa-folder-open"></i>
-                    <span>creativecommons</span>
+                    <span>AI/DL models implementation</span>
                     <i class="fa-solid fa-link"></i>
                 </div>
-                <p>Added section for 'Other Opportunities' on main page.</p>
+                <p>Implemented multiple ML/DL models for tasks like spam detection, purchase and churn prediction, stock & vehicle prediction, cancer detection, sentiment analysis, and housing price prediction, demonstrating skills in data preprocessing, regression, classification, clustering, and neural networks.</p>
                 <div class="card-footer">
-                    <span class="organization">Creative Commons</span>
+                    <span></span>
                     <a href="#" class="github-link" aria-label="View on GitHub">
                         <i class="fa-solid fa-arrow-up-right-from-square"></i>
                     </a>
                 </div>
             </div>
         </div>
-        <button class="view-all-button">
-            <i class="fa-solid fa-chevron-down"></i>
-            <span>View All</span>
-        </button>
+        <a href="projects.html">
+            <button class="view-all-button">
+               <i class="fa-solid fa-chevron-down"></i>
+             <span>View All</span>
+            </button>
+            </a>
     </div>
 </section>
 <footer class="main-footer">
     <div class="social-links">
-        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="#" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        <a href="https://github.com/Hussain-717" aria-label="GitHub" target="_blank"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/hussain-ammar-b84916319?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" aria-label="LinkedIn" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="mailto:hussainminitour@gmail.com" aria-label="Email" target="_blank">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          
     </div>
     <div class="footer-text">
         <p>Developed By <a href="#">Hussain Ammar Haider</a></p>
